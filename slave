@@ -1,0 +1,17 @@
+#include <SoftwareSerial.h>
+SoftwareSerial RS485Serial(10, 11);
+int data = 123;
+
+void setup()
+{
+  pinMode(3, OUTPUT);
+  digitalWrite(3, LOW);
+  RS485Serial.begin(9600);
+}
+void loop ()
+{
+ digitalWrite(3, HIGH);
+ RS485Serial.write(data);
+ delay(1000);
+}
+
